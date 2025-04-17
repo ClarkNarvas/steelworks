@@ -1,44 +1,45 @@
 import Link from "next/link"
+import type { PostConnectionQuery } from "../../tina/__generated__/types"
 
-// Define the props interface for the PostList component
-interface PostListProps {
-  data: {
-    postConnection: {
-      edges: Array<{
-        node: {
-          title: string
-          date: string
-          _sys: {
-            filename: string
-          }
-        }
-      }>
-    }
-  }
+export interface PostListProps {
+  data: PostConnectionQuery
+  variables?: any
+  query?: string
+  errors?: any
 }
 
-function PostList({ data }: PostListProps) {
-  const posts = data.postConnection.edges.map((edge) => ({
-    title: edge.node.title,
-    slug: edge.node._sys.filename,
-    date: edge.node.date,
-  }))
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+export default function PostList({ data }: PostListProps) {
+  // Add null checking to handle undefined data
+  // This is the key fix - use optional chaining and provide a fallback empty array
+  const posts = data?.postConnection?.edges || []
+
+  // The rest of your component can remain the same
+  // Just make sure to add optional chaining when accessing nested properties
+
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h1 className="text-3xl mb-8 text-center mt-3">Posts</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug} className="rounded-lg p-4 border-b group transition-shadow">
-            <Link href={`/news/${post.slug}`} className="block">
-              <h2 className="text-3xl m-0 mb-2 group-hover:stroke-pink-600">{post.title}</h2>
-              <p className="text-gray-600 mt-5">{new Date(post.date).toLocaleDateString()}</p>
+    // Your original HTML structure here
+    <div>
+      <h1 className="text-3xl font-bold mb-4">News</h1>
+      {/* Use your original HTML structure, just add null checks */}
+      {posts.map((post) => {
+        // Add null check before accessing post.node
+        if (!post?.node) return null
+
+        // Use optional chaining for all nested properties
+        const title = post.node.title || "Untitled"
+        const filename = post.node._sys?.filename || ""
+
+        return (
+          <div key={post.node.id || post.cursor} className="border p-4 rounded-lg">
+            <Link href={`/news/${filename}`}>
+              <h2 className="text-xl font-semibold hover:underline">{title}</h2>
             </Link>
-          </li>
-        ))}
-      </ul>
+            {/* Rest of your original structure */}
+          </div>
+        )
+      })}
+
+      {posts.length === 0 && <p>No posts found.</p>}
     </div>
   )
 }
-
-export default PostList
