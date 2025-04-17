@@ -1,8 +1,8 @@
 import Link from "next/link"
-import type { newsConnectionQuery } from "../../tina/__generated__/types"
+import type { NewsConnectionQuery } from "../../tina/__generated__/types"
 
 export interface PostListProps {
-  data: newsConnectionQuery
+  data: NavigationTimingTypeNewsConnectionQuery
   variables?: any
   query?: string
   errors?: any
