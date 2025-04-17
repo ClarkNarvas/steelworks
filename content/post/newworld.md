@@ -1,13 +1,12 @@
 ---
-title: >-
-  "MP marks National Apprenticeship Week by backing government overhaul of
-  system"
+title: MP marks National Apprenticeship Week by backing government overhaul of system
+date: 2025-04-16T23:00:00.000Z
 ---
 
 **Labour unveils landmark plans to unlock thousands of apprenticeships across the country**
 
-> ** Education Secretary bolsters Government plans to go “further, faster” on growth
-> Marie Tidball MP, Member of Parliament for Penistone and Stocksbridge, has welcomed Labour’s reform of the skills system to unlock opportunity and drive growth across Penistone and Stocksbridge.**
+> \*\* Education Secretary bolsters Government plans to go “further, faster” on growth
+> Marie Tidball MP, Member of Parliament for Penistone and Stocksbridge, has welcomed Labour’s reform of the skills system to unlock opportunity and drive growth across Penistone and Stocksbridge.\*\*
 
 Labour has unveiled new measures to slash the red tape which has prevented businesses from taking on more apprentices. Employers will have more flexibility through the removal of 12-month requirements to support shorter duration apprenticeships in key sectors.
 In a landmark reform, Labour will be bringing apprenticeships in line with the wider educational system by removing the requirement for GCSE English and Maths for adults over the age of 19 who wish to complete an apprenticeship. This will break down the barriers to opportunity and unlock apprenticeships for up to 10,000 more young people across the country with the support of businesses.
@@ -27,8 +26,6 @@ Marie Tidball MP, Member of Parliament for Penistone and Stocksbridge, said:
 \
 \ENDS
 
-
 Notes to Editor:
-
 
 •   Details on apprenticeship starts, participation and achievements between August October 2024 available here: [https://explore-education-statistics.service.gov.uk/find-statistics/apprenticeships](https://explore-education-statistics.service.gov.uk/find-statistics/apprenticeships). •   DfE press release on Homebuilding Skills Hubs available here: [https://www.gov.uk/government/news/new-skills-hubs-launched-to-get-britain-building](https://www.gov.uk/government/news/new-skills-hubs-launched-to-get-britain-building).
