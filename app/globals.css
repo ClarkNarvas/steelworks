@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     src: url('/fonts/Literata/Literata-VariableFont_opsz,wght.ttf') format('ttf');
 }
 
