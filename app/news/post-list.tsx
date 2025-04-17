@@ -18,11 +18,7 @@ interface PostListProps {
 }
 
 // Define the structure of a post after mapping
-interface Post {
-  title: string
-  slug: string
-  date: string
-}
+
 
 function PostList({ data }: PostListProps) {
   const posts = data.postConnection.edges.map((edge) => ({
