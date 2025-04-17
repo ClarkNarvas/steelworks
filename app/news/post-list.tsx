@@ -17,9 +17,6 @@ interface PostListProps {
   }
 }
 
-// Define the structure of a post after mapping
-
-
 function PostList({ data }: PostListProps) {
   const posts = data.postConnection.edges.map((edge) => ({
     title: edge.node.title,
@@ -27,7 +24,6 @@ function PostList({ data }: PostListProps) {
     date: edge.node.date,
   }))
   posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-3xl mb-8 text-center mt-3">Posts</h1>
