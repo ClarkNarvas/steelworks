@@ -2,9 +2,9 @@
  * @type {import('tinacms').Collection}
  */
 export default {
-  label: "Blog Posts",
-  name: "post",
-  path: "content/post",
+  label: "News",
+  name: "news",
+  path: "content/news",
   fields: [
     {
       type: "string",
