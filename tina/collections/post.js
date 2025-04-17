@@ -13,14 +13,24 @@ export default {
     },
     {
       type: "rich-text",
-      label: "Blog Post Body",
+      label: "Body",
       name: "body",
       isBody: true,
+    },
+    {
+      type: "string",
+      label: "Category",
+      name: "category",
+    },
+    {
+      type: "datetime",
+      label: "Date",
+      name: "date",
     },
   ],
   ui: {
     router: ({ document }) => {
-      return `/posts/${document._sys.filename}`;
+      return `/news/${document._sys.filename}`;
     },
   },
 };
