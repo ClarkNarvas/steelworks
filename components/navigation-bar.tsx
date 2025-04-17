@@ -47,10 +47,12 @@ export default function NavigationBar() {
 
         {/* Action Buttons - Right aligned */}
         <div className="hidden items-center gap-6 lg:flex">
-          <Link href="/support" className="whitespace-nowrap text-base font-medium text-green-700 hover:text-green-800">
+          <Link href="mailto:marie.tidball.casework@parliament.uk" className="whitespace-nowrap text-base font-medium text-green-700 hover:text-green-800">
             Get support &gt;
           </Link>
+          <Link href="https://marietidball.substack.com/?utm_source=discover_search" >
           <Button className="whitespace-nowrap rounded-full bg-red-600 px-6 hover:bg-red-700">Newsletter</Button>
+          </Link>
         </div>
 
         {/* Mobile Menu */}
