@@ -19,80 +19,84 @@ export default function NavigationBar() {
 
   return (
     <header className="w-full border-b bg-white">
-      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/uploads/mt-logo-red.png"
             alt="Marie Tidball MP for Penistone & Stocksbridge"
-            width={150}
-            height={200}
+            width={180}
+            height={60}
             priority
             className="h-auto w-auto"
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-base font-medium text-gray-900 transition-colors hover:text-red-600"
-            >
-              {item.label}
-            </Link>
-          ))}
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden flex-1 items-center justify-center lg:flex">
+          <div className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-base font-medium text-gray-900 transition-colors hover:text-red-600"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </nav>
 
-        {/* Action Buttons */}
-        <div className="hidden items-center gap-4 md:flex">
-          <Link href="/support" className="text-base font-medium text-green-700 hover:text-green-800">
+        {/* Action Buttons - Right aligned */}
+        <div className="hidden items-center gap-6 lg:flex">
+          <Link href="/support" className="whitespace-nowrap text-base font-medium text-green-700 hover:text-green-800">
             Get support &gt;
           </Link>
-          <Button className="rounded-full bg-red-600 px-6 hover:bg-red-700">Newsletter</Button>
+          <Button className="whitespace-nowrap rounded-full bg-red-600 px-6 hover:bg-red-700">Newsletter</Button>
         </div>
 
         {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="h-10 w-10">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-            <div className="flex flex-col gap-6 pt-6">
-              <nav className="flex flex-col gap-4">
-                {navItems.map((item) => (
+        <div className="flex lg:hidden">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="ml-auto">
+              <Button variant="outline" size="icon" className="h-10 w-10">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+              <div className="flex flex-col gap-6 pt-6">
+                <nav className="flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="text-lg font-medium text-gray-900 transition-colors hover:text-red-600"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="flex flex-col gap-4 pt-4">
                   <Link
-                    key={item.label}
-                    href={item.href}
-                    className="text-lg font-medium text-gray-900 transition-colors hover:text-red-600"
+                    href="/support"
+                    className="text-lg font-medium text-green-700 hover:text-green-800"
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.label}
+                    Get support &gt;
                   </Link>
-                ))}
-              </nav>
-              <div className="flex flex-col gap-4 pt-4">
-                <Link
-                  href="/support"
-                  className="text-lg font-medium text-green-700 hover:text-green-800"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get support &gt;
-                </Link>
-                <Button
-                  className="w-full rounded-full bg-red-600 px-6 hover:bg-red-700"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Newsletter
-                </Button>
+                  <Button
+                    className="w-full rounded-full bg-red-600 px-6 hover:bg-red-700"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Newsletter
+                  </Button>
+                </div>
               </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   )
