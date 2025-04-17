@@ -9,7 +9,7 @@ export default function PostList(props) {
       <ul>
       {props.data.postConnection.edges.map((post) => (
           <li key={post.slug} className=" rounded-lg p-4 border-b group transition-shadow">
-            <Link href={`/posts/${post.node._sys.filename}`} className="block">
+            <Link href={`/news/${post.node._sys.filename}`} className="block">
               <h2 className="text-3xl m-0 mb-2 group-hover:stroke-pink-600">{post.node._sys.filename}</h2>
               <p className="text-gray-600 mt-5">Date Here</p>
             </Link>

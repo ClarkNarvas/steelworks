@@ -22,10 +22,14 @@ export default function Post(props: ClientPageProps) {
   return (
     <>
       <h1 data-tina-field={tinaField(data.post, "title")}>
-        {data.post.title}
+        <div className="mt-container text-center p-4 pt-10">
+          <h1 className="text-4xl mb-4">{data.post.title}</h1>
+        </div>
       </h1>
       <div data-tina-field={tinaField(data.post, "body")}>
+      <div className="mt-container mt-article mx-auto p-4 mt-5">
         <TinaMarkdown content={content} />
+        </div>
       </div>
     </>
   );
