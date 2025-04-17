@@ -4,6 +4,8 @@ title: >-
   access plant earlier
 ---
 
+![](</uploads/Screenshot 2025-04-11 at 1.18.51 PM.png>)
+
 In a village hall near the steel works, the prime minister shakes the hands of workers who have gathered.
 
 It’s a buoyant mood here. There’s excitement and relief at what their future now looks like.
