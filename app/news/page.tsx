@@ -3,7 +3,7 @@ import PostList from "./post-list"
 
 export default async function NewsPage() {
   try {
-    const response = await client.queries.postConnection()
+    const response = await client.queries.newsConnection()
 
     // Pass the data property to the PostList component
     return <PostList data={response.data} />

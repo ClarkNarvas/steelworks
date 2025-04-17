@@ -1,8 +1,8 @@
 import Link from "next/link"
-import type { PostConnectionQuery } from "../../tina/__generated__/types"
+import type { newsConnectionQuery } from "../../tina/__generated__/types"
 
 export interface PostListProps {
-  data: PostConnectionQuery
+  data: newsConnectionQuery
   variables?: any
   query?: string
   errors?: any
@@ -10,7 +10,7 @@ export interface PostListProps {
 
 export default function PostList({ data }: PostListProps) {
   // Add null checking to handle undefined data
-  const posts = data?.postConnection?.edges || []
+  const posts = data?.newsConnection?.edges || []
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
