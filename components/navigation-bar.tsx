@@ -65,7 +65,7 @@ export default function NavigationBar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-              <div className="flex flex-col gap-6 pt-6">
+              <div className="flex flex-col gap-6 pt-6 p-5">
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (
                     <Link
