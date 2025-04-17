@@ -74,7 +74,7 @@ export default function PostList({ data }: PostListProps) {
             <p>No posts found.</p>
           ) : (
             <motion.div className="space-y-8" variants={containerVariants} initial="hidden" animate="show">
-              {posts.map((post, index) => {
+              {posts.map((post) => {
                 // Add null check before accessing post.node
                 if (!post?.node) return null
 
