@@ -2,7 +2,10 @@ import Post from "./client-page";
 import client from "../../../tina/__generated__/client";
 
 export async function generateStaticParams() {
-  const pages = await client.queries.newsConnection();
+  const pages = await client.queries.newsConnection({
+    sort: "date",
+  })
+
   const paths = pages.data?.newsConnection?.edges?.map((edge) => ({
     filename: edge?.node?._sys.breadcrumbs,
   }));

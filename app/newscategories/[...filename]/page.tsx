@@ -35,6 +35,7 @@ export default async function NewsPage({ params }: PageParams) {
           eq: category, // Now this is a string, not an array
         },
       },
+      sort: "date",
     })
 
     // Pass the data property to the PostList component
