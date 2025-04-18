@@ -3,7 +3,7 @@ import client from "../../../tina/__generated__/client";
 
 export async function generateStaticParams() {
   const pages = await client.queries.newsConnection({
-    sort: "date",
+    sort: "date:desc",
   })
 
   const paths = pages.data?.newsConnection?.edges?.map((edge) => ({
