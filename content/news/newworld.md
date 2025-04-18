@@ -1,5 +1,6 @@
 ---
 title: MP marks National Apprenticeship Week by backing government overhaul of system
+category: Education
 date: 2025-04-16T23:00:00.000Z
 ---
 
