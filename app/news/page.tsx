@@ -1,5 +1,5 @@
 import { client } from "../../tina/__generated__/client"
-import PostList from "./post-list"
+import PostList from "../../components/indexing/post-list"
 
 export default async function NewsPage() {
   try {
