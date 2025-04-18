@@ -3,7 +3,7 @@ import PostList from "../../../components/indexing/post-list"
 
 interface PageParams {
   params: {
-    filename: string[]  // This is an array with catch-all routes [...filename]
+    filename: string[]
   }
 }
 
@@ -13,11 +13,8 @@ export default async function NewsPage({ params }: PageParams) {
 
   // Add validation to ensure category exists
   if (!category) {
-    console.log("Params received:", JSON.stringify(params, null, 2))
-    return <div>Error: Category parameter is undefined</div>
+    return <div className="container mx-auto p-4">Error: Category parameter is undefined</div>
   }
-
-  console.log("Fetching posts for category:", category)
 
   try {
     const response = await client.queries.newsConnection({
@@ -28,10 +25,19 @@ export default async function NewsPage({ params }: PageParams) {
       }
     })
 
-    // Pass the data property to the PostList component
+    // Make sure we're returning a valid React element, not just the data
     return <PostList data={response.data} />
   } catch (error) {
     console.error("Error fetching posts:", error)
-    return <div>Error loading posts: {String(error)}</div>
+    // Return a valid React element for the error case
+    return (
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">Error Loading Posts</h1>
+        <p className="text-red-500">There was a problem loading posts for this category.</p>
+        <pre className="mt-4 p-4 bg-gray-100 rounded overflow-auto text-sm">
+          {error instanceof Error ? error.message : String(error)}
+        </pre>
+      </div>
+    )
   }
 }
