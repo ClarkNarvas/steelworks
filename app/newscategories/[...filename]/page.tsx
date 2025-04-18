@@ -1,9 +1,10 @@
 import { client } from "../../../tina/__generated__/client"
 import PostList from "../../../components/indexing/post-list"
+export const dynamic = 'force-dynamic';
 
 interface PageParams {
   params: {
-    filename: string[]
+    filename: string[]  // This is an array with catch-all routes [...filename]
   }
 }
 
@@ -13,8 +14,11 @@ export default async function NewsPage({ params }: PageParams) {
 
   // Add validation to ensure category exists
   if (!category) {
-    return <div className="container mx-auto p-4">Error: Category parameter is undefined</div>
+    console.log("Params received:", JSON.stringify(params, null, 2))
+    return <div>Error: Category parameter is undefined</div>
   }
+
+  console.log("Fetching posts for category:", category)
 
   try {
     const response = await client.queries.newsConnection({
@@ -25,19 +29,10 @@ export default async function NewsPage({ params }: PageParams) {
       }
     })
 
-    // Make sure we're returning a valid React element, not just the data
+    // Pass the data property to the PostList component
     return <PostList data={response.data} />
   } catch (error) {
     console.error("Error fetching posts:", error)
-    // Return a valid React element for the error case
-    return (
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Error Loading Posts</h1>
-        <p className="text-red-500">There was a problem loading posts for this category.</p>
-        <pre className="mt-4 p-4 bg-gray-100 rounded overflow-auto text-sm">
-          {error instanceof Error ? error.message : String(error)}
-        </pre>
-      </div>
-    )
+    return <div>Error loading posts: {String(error)}</div>
   }
 }
