@@ -2,7 +2,7 @@
 title: >-
   British Steel bill clears Commons, as BBC understands owners were unable to
   access plant earlier
-category: Steel
+category: steel
 date: 2025-04-17T23:00:00.000Z
 ---
 
