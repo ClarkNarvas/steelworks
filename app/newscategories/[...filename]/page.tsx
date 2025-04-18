@@ -1,9 +1,12 @@
 import { client } from "../../../tina/__generated__/client"
 import PostList from "../../../components/indexing/post-list"
 
+// Force this page to be dynamically rendered at request time
+export const dynamic = "force-dynamic"
+
 interface PageParams {
   params: {
-    filename: string[]  // This is an array with catch-all routes [...filename]
+    filename: string[] // This is an array with catch-all routes [...filename]
   }
 }
 
@@ -23,9 +26,9 @@ export default async function NewsPage({ params }: PageParams) {
     const response = await client.queries.newsConnection({
       filter: {
         category: {
-          eq: category  // Now this is a string, not an array
-        }
-      }
+          eq: category, // Now this is a string, not an array
+        },
+      },
     })
 
     // Pass the data property to the PostList component
@@ -35,5 +38,3 @@ export default async function NewsPage({ params }: PageParams) {
     return <div>Error loading posts: {String(error)}</div>
   }
 }
-
-export const dynamic = 'force-dynamic';
