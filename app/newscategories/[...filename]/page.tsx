@@ -1,6 +1,5 @@
 import { client } from "../../../tina/__generated__/client"
 import PostList from "../../../components/indexing/post-list"
-export const dynamic = 'force-dynamic';
 
 interface PageParams {
   params: {
@@ -36,3 +35,5 @@ export default async function NewsPage({ params }: PageParams) {
     return <div>Error loading posts: {String(error)}</div>
   }
 }
+
+export const dynamic = 'force-dynamic';
