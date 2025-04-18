@@ -3,6 +3,12 @@ import PostList from "../../../components/indexing/post-list"
 
 // Force this page to be dynamically rendered at request time
 export const dynamic = "force-dynamic"
+// Disable static generation for this route
+export const generateStaticParams = () => {
+  return []
+}
+// Set revalidate to 0 to prevent caching
+export const revalidate = 0
 
 interface PageParams {
   params: {
